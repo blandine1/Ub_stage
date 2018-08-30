@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="./resources/css/cssLayout.css"/>
+        <link rel="stylesheet" type="text/css" href="./resources/css/default.css"/>
+        <title>Ub-EventApp</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="top">
+            <ui:insert name="top">
+
+                <img src="resources/image/ublogo.png" style="height: 40px; width: 40px;margin-top: 1px"></img>
+                <img src="resources/image/logoAP.png" style="height: 250px; width: 300px; margin-top: -87px; margin-left: 450px"></img>
+                <h:outputText style="color: white; margin-left:400px" value="Contact: 655792904"></h:outputText>
+            </ui:insert>
+        </div>
+        <h:form>  
+            <p:menubar>
+                <p:menuitem style="color: white" value="Organisateur" action="organisateur.xhtml"/>
+                <f:facet name="options">
+                    <p:commandButton value="Logout" icon="ui-icon-extlink" action="index.xhtml"/>
+                    <p:commandButton  value="Se connecter"  action="authentifier.xhtml"/>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">
+               
+                
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

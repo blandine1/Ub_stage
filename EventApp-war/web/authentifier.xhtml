@@ -11,6 +11,7 @@
         <ui:composition template="./index.xhtml">
 
             <ui:define name="content">
+                <p:growl id="growl" sticky="true" showDetail="true"/>
                 <h:form>
 
                     <p:panelGrid columns="3" style="position: absolute; top:100px; left:500px; height: 200px;width: 200px">
@@ -31,7 +32,7 @@
                         <f:facet name="footer">
                             <center>
                                 <p:commandButton  value="Login" action="#{authentification.authentification()}" />
-                                <p:commandLink style="color: white; margin-left: 10px" value="s'inscrire ici" action="S'inscrire.xhtml" immediate="true">
+                                <p:commandLink style="color: green; margin-left: 10px" value="s'inscrire ici" action="S'inscrire.xhtml" immediate="true">
 
                                 </p:commandLink>
                             </center>

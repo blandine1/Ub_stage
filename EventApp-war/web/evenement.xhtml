@@ -12,12 +12,12 @@
 
             <ui:define name="content">
                
-                <h:form>
-                       
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="List"/></h1>
                         <p:dataTable value="#{evenementController.listEvenement}" var="item">
-                            <f:facet name="header">
-                                Liste d'evenement
-                            </f:facet>
                             <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Idevenement"/>
@@ -26,7 +26,7 @@
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Nom evenement"/>
+                                    <h:outputText value="Nomevent"/>
                                 </f:facet>
                                 <h:outputText value="#{item.nomevent}"/>
                             </p:column>
@@ -38,7 +38,7 @@
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Date debut"/>
+                                    <h:outputText value="Datedebut"/>
                                 </f:facet>
                                 <h:outputText value="#{item.datedebut}">
                                     <f:convertDateTime pattern="MM/dd/yyyy" />
@@ -46,29 +46,35 @@
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Date fin"/>
+                                    <h:outputText value="Datefin"/>
                                 </f:facet>
                                 <h:outputText value="#{item.datefin}">
-                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
                                 </h:outputText>
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Lieu evenement"/>
+                                    <h:outputText value="Lieuevent"/>
                                 </f:facet>
                                 <h:outputText value="#{item.lieuevent}"/>
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Heure debut"/>
+                                    <h:outputText value="Heurdebut"/>
                                 </f:facet>
                                 <h:outputText value="#{item.heurdebut}"/>
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Heure fin"/>
+                                    <h:outputText value="Heurfin"/>
                                 </f:facet>
                                 <h:outputText value="#{item.heurfin}"/>
+                            </p:column>
+                             <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ville"/>
+                                </f:facet>
+                                <h:outputText value="#{item.ville}"/>
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
@@ -78,6 +84,8 @@
                             </p:column>
                         </p:dataTable>
                     </h:form>
+                </f:view>
+
               
             </ui:define>
 

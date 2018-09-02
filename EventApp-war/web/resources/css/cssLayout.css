@@ -23,6 +23,7 @@
     padding: 5px;
     margin: 1px 0px 0px 0px;
     border-radius: 0px 0px 10px 10px;
+    background-image: url(../image/background.jpg);
    
 }
 
@@ -46,6 +47,8 @@
     padding: 5px;
     height: 600px;
     border-radius: 0px 0px 10px 10px;
+    background-image: url(../image/background.jpg);
+    background-repeat: no-repeat;
     
 }
 

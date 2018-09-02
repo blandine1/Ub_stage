@@ -43,7 +43,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Evenement.findByDatefin", query = "SELECT e FROM Evenement e WHERE e.datefin = :datefin")
     , @NamedQuery(name = "Evenement.findByLieuevent", query = "SELECT e FROM Evenement e WHERE e.lieuevent = :lieuevent")
     , @NamedQuery(name = "Evenement.findByHeurdebut", query = "SELECT e FROM Evenement e WHERE e.heurdebut = :heurdebut")
-    , @NamedQuery(name = "Evenement.findByHeurfin", query = "SELECT e FROM Evenement e WHERE e.heurfin = :heurfin")})
+    , @NamedQuery(name = "Evenement.findByHeurfin", query = "SELECT e FROM Evenement e WHERE e.heurfin = :heurfin")
+    , @NamedQuery(name = "Evenement.findByVille", query = "SELECT e FROM Evenement e WHERE e.ville = :ville")})
 public class Evenement implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -28,15 +28,15 @@
 
 
 
-                            <p:fileUpload fileUploadListener="#{evenementController.evenement.image}" mode="advanced" dragDropSupport="false"
-                                          update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
-                            <p:growl id="messages" showDetail="true" />
-                            <p:message for="messages" />
+                            <p:fileUpload id="photo" label="Choisir" fileUploadListener="#{evenementController.handleFileUpload()}" 
+                                          mode="advanced" dragDropSupport="false" sizeLimit="100000" fileLimit="2" 
+                                          allowTypes="/(\.|\/)(gif|jpe?g|png)$/" required="true" requiredMessage="Required" />
+
 
                             <p:outputLabel value="Date debut:" for="datedebut" />
-                            <p:inputText id="datedebut" value="#{evenementController.evenement.datedebut}" title="Datedebut" required="true" requiredMessage="obligatoire" >
+                            <p:calendar id="datedebut" value="#{evenementController.evenement.datedebut}" title="Datedebut" required="true" requiredMessage="obligatoire" >
                                 <f:convertDateTime pattern="dd/MM/yyyy" />
-                            </p:inputText>
+                            </p:calendar>
                             <p:message for="datedebut" />
 
                         </h:panelGrid>
@@ -47,9 +47,9 @@
 
 
                             <p:outputLabel value="Date fin:" for="datefin" />
-                            <p:inputText id="datefin" value="#{evenementController.evenement.datefin}" title="Datefin" required="true" requiredMessage="obligatoire" >
+                            <p:calendar id="datefin" value="#{evenementController.evenement.datefin}" title="Datefin" required="true" requiredMessage="obligatoire" >
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
-                            </p:inputText>
+                            </p:calendar>
                             <p:message for="datefin" />
 
                             <p:outputLabel value="Lieu event:" for="lieuevent" />
@@ -63,6 +63,10 @@
                             <p:outputLabel value="Heure fin:" for="heurfin" />
                             <p:inputText id="heurfin" value="#{evenementController.evenement.heurfin}" title="Heurfin" required="true" requiredMessage="obligatoire" />
                             <p:message for="heurfin" />
+                            
+                            <p:outputLabel value="ville:" for="ville" />
+                            <p:inputText id="ville" value="#{evenementController.evenement.ville}" title="ville" required="true" requiredMessage="obligatoire" />
+                            <p:message for="ville" />
 
                             <p:outputLabel value="type:" for="idtype" />
                             <p:selectOneMenu style="width: 150px" id="idtype" value="#{evenementController.evenement.idtype}" required="true" requiredMessage="The Idtype field is required.">

@@ -24,20 +24,51 @@
                 <h:outputText style="color: white; margin-left:400px" value="Contact: 655792904"></h:outputText>
             </ui:insert>
         </div>
-        <h:form>  
-            <p:menubar>
-                <p:menuitem style="color: white" value="Organisateur" action="organisateur.xhtml"/>
+
+        <h:form >  
+            <p:growl id="messages"/>
+
+            <p:menubar >
+                <p:submenu label="Organisateur">
+                    <p:menuitem  value="les organisateurs" action="organisateur.xhtml" />
+                   
+                </p:submenu>
+
+                <p:submenu label="Type" >
+                    <p:menuitem value="liste types" action="type_evenement.xhtml"/>
+                </p:submenu>
+
+                <p:submenu label="Help" icon="ui-icon-help">
+                    <p:menuitem value="Contents" url="#" />
+                    <p:submenu label="Search" icon="ui-icon-search">
+                        <p:submenu label="Text">
+                            <p:menuitem value="Workspace" url="#" />
+                        </p:submenu>
+                        <p:menuitem value="File" url="#" />
+                    </p:submenu>
+                </p:submenu>
+
+                <p:submenu label="Actions" icon="ui-icon-gear">
+                    <p:submenu label="Ajax" icon="ui-icon-refresh">
+                        <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" update="messages"/>
+                        <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
+                    </p:submenu>
+                    <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
+                        <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close" update="messages" ajax="false"/>
+                    </p:submenu>
+                </p:submenu>
+
                 <f:facet name="options">
-                    <p:commandButton value="Logout" icon="ui-icon-extlink" action="index.xhtml"/>
-                    <p:commandButton  value="Se connecter"  action="authentifier.xhtml"/>
+                    <p:commandButton value="Logout" icon="ui-icon-extlink" action="index.xhtml" />
+                    <p:commandButton   value="Se connecter"  action="authentifier.xhtml" />
                 </f:facet>
             </p:menubar>
         </h:form>
 
         <div id="content" class="center_content">
             <ui:insert name="content">
-               
-                
+
+
             </ui:insert>
         </div>
 

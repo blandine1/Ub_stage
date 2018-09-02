@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./index.xhtml">
+
+            <ui:define name="content">
+               
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="List"/></h1>
+                        <p:dataTable value="#{evenementController.listEvenement}" var="item">
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Idevenement"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idevenement}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nomevent"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nomevent}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Image"/>
+                                </f:facet>
+                                <h:outputText value="#{item.image}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Datedebut"/>
+                                </f:facet>
+                                <h:outputText value="#{item.datedebut}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Datefin"/>
+                                </f:facet>
+                                <h:outputText value="#{item.datefin}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Lieuevent"/>
+                                </f:facet>
+                                <h:outputText value="#{item.lieuevent}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Heurdebut"/>
+                                </f:facet>
+                                <h:outputText value="#{item.heurdebut}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Heurfin"/>
+                                </f:facet>
+                                <h:outputText value="#{item.heurfin}"/>
+                            </p:column>
+                             <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ville"/>
+                                </f:facet>
+                                <h:outputText value="#{item.ville}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Idtype"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idtype}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </f:view>
+
+              
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

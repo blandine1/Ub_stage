@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./index.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+
+                    <h:panelGrid columns="3"  style="position: absolute; top:59px; left:200px; width: 500px">
+
+                        <h:panelGrid style="margin-left: 170px;top:50px">
+                            <p:outputLabel value="Idevenement:" for="idevenement" />
+                            <p:inputText id="idevenement" value="#{evenementController.evenement.idevenement}" title="Idevenement" required="true" requiredMessage="The Idevenement field is required."/>
+                            <p:message for="idevenement" />
+
+
+
+                            <p:outputLabel value="Nom event:" for="nomevent" />
+                            <p:inputText id="nomevent" value="#{evenementController.evenement.nomevent}" title="Nomevent" required="true" requiredMessage="obligatoire" />
+                            <p:message for="nomevent" />
+
+
+
+                            <p:fileUpload id="photo" label="Choisir" fileUploadListener="#{evenementController.handleFileUpload()}" 
+                                          mode="advanced" dragDropSupport="false" sizeLimit="100000" fileLimit="2" 
+                                          allowTypes="/(\.|\/)(gif|jpe?g|png)$/" required="true" requiredMessage="Required" />
+
+
+                            <p:outputLabel value="Date debut:" for="datedebut" />
+                            <p:calendar id="datedebut" value="#{evenementController.evenement.datedebut}" title="Datedebut" required="true" requiredMessage="obligatoire" >
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </p:calendar>
+                            <p:message for="datedebut" />
+
+                        </h:panelGrid>
+
+
+
+                        <h:panelGrid style="margin-left: 150px;top:59px">
+
+
+                            <p:outputLabel value="Date fin:" for="datefin" />
+                            <p:calendar id="datefin" value="#{evenementController.evenement.datefin}" title="Datefin" required="true" requiredMessage="obligatoire" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </p:calendar>
+                            <p:message for="datefin" />
+
+                            <p:outputLabel value="Lieu event:" for="lieuevent" />
+                            <p:inputText id="lieuevent" value="#{evenementController.evenement.lieuevent}" title="Lieuevent" required="true" requiredMessage="obligatoire" />
+                            <p:message for="lieuevent" />
+
+                            <p:outputLabel value="Heure debut:" for="heurdebut" />
+                            <p:inputText id="heurdebut" value="#{evenementController.evenement.heurdebut}" title="Heurdebut" required="true" requiredMessage="obligatoire" />
+                            <p:message for="heurdebut" />
+
+                            <p:outputLabel value="Heure fin:" for="heurfin" />
+                            <p:inputText id="heurfin" value="#{evenementController.evenement.heurfin}" title="Heurfin" required="true" requiredMessage="obligatoire" />
+                            <p:message for="heurfin" />
+                            
+                            <p:outputLabel value="ville:" for="ville" />
+                            <p:inputText id="ville" value="#{evenementController.evenement.ville}" title="ville" required="true" requiredMessage="obligatoire" />
+                            <p:message for="ville" />
+
+                            <p:outputLabel value="type:" for="idtype" />
+                            <p:selectOneMenu style="width: 150px" id="idtype" value="#{evenementController.evenement.idtype}" required="true" requiredMessage="The Idtype field is required.">
+                                <f:selectItems itemLabel="" itemValue=""/>
+                                <f:selectItems var="evt" value="#{type_event.listtypeevenement}" itemLabel="#{evt.nomtype}" itemValue="#{evt.idtype}"/>
+                            </p:selectOneMenu>
+                            <p:message for="idtype" />
+                        </h:panelGrid>
+
+                    </h:panelGrid>
+                </h:form>
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
